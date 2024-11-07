@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: row;
@@ -41,16 +41,15 @@ body {
   flex: 1;
   flex-direction: column;
   /* border: 2px solid green; */
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 .side-bar {
-  /*  */
+  display: flex;
   background-color: var(--primary-color);
   /* border: 5px solid rgb(0, 0, 0); */
   border-right: 0.1px solid #979797;
   /* flex: 0.8; */
-  display: none;
   flex-direction: column;
   gap: 50px;
   /* padding-left: 50px; */
@@ -60,6 +59,7 @@ body {
   margin-right: 0;
   /* padding: 0 12px 0 26px; */
   width: 350px;
+  color: var(--primary-color);
 }
 
 .boards-nav-links-div {
@@ -82,7 +82,7 @@ body {
   height: 40px;
   background-color: transparent;
   border: 0;
-  color: #219C90;
+  color: #219c90;
   font-size: 16px;
   cursor: pointer;
   overflow: hidden;
@@ -94,7 +94,6 @@ body {
   filter: invert(21%) sepia(95%) saturate(5663%) hue-rotate(150deg)
     brightness(88%) contrast(88%);
 }
-
 
 .board-btn {
   font-family: inherit;
@@ -117,7 +116,7 @@ body {
 }
 
 .active {
-  background-color: #219C90;
+  background-color: #219c90;
   color: white;
   font-weight: 500;
   padding: 28px 12px 28px 50px;
@@ -139,15 +138,15 @@ body {
 }
 
 #todo-dot {
-  background-color: #D83F31;
+  background-color: #d83f31;
 }
 
 #doing-dot {
-  background-color: #E9B824;
+  background-color: #e9b824;
 }
 
 #done-dot {
-  background-color: #219C90;
+  background-color: #219c90;
 }
 
 h4 {
@@ -179,7 +178,7 @@ h4 {
   position: absolute;
   bottom: 45px;
   border-radius: 0 20px 20px 0;
-  background-color: #219C90;
+  background-color: #219c90;
   display: none;
   cursor: pointer;
 }
@@ -230,7 +229,7 @@ header {
 }
 
 #add-new-task-btn {
-  background-color: #219C90;
+  background-color: #219c90;
   color: white;
   border-radius: 30px;
   border: 0;
@@ -303,7 +302,9 @@ header {
 /* Edit task */
 
 #create-task-btn,
-#cancel-add-task-btn {
+#cancel-add-task-btn,
+#cancel-add-board-btn,
+#save-board-btn {
   margin-top: 15px;
   flex: 1; /* This will make both buttons flex equally */
 }
@@ -325,7 +326,8 @@ header {
   padding: 100px 0; /* Adjust padding as necessary */
 }
 
-#cancel-add-task-btn {
+#cancel-add-task-btn,
+#cancel-add-board-btn {
   background-color: #ea5555;
 }
 
@@ -381,13 +383,11 @@ header {
   padding: 10px 0; /* You can adjust the top and bottom padding as needed */
 }
 
-
 .edit-task-div.button-group .editBtns {
   flex: 1; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0% */
   min-height: 60px;
   margin: 0 4px; /* Adjust as needed for spacing between buttons */
 }
-
 
 .edit-task-modal-window {
   position: fixed;
@@ -472,7 +472,7 @@ header {
 }
 
 #save-task-changes-btn {
-  background-color: #219C90;
+  background-color: #219c90;
   color: white;
   border-radius: 30px;
   border: 0;
@@ -482,7 +482,7 @@ header {
 }
 
 #cancel-edit-btn {
-  background-color:#E9B824;
+  background-color: #e9b824;
   color: white;
   border-radius: 30px;
   border: 0;
@@ -492,7 +492,7 @@ header {
 }
 
 #delete-task-btn {
-  background-color:#ea5555;
+  background-color: #ea5555;
   color: white;
   border-radius: 30px;
   border: 0;
@@ -566,7 +566,8 @@ h2 {
   letter-spacing: 1px;
 }
 
-.modal-window {
+.modal-window,
+.board-modal-window {
   /* border: 5px solid red; */
   display: flex;
   flex-direction: column;
@@ -654,7 +655,7 @@ input#edit-task-title-input.task-title-input {
 }
 
 #edit-select-status {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 14px;
   height: 40px;
   padding: 10px;
@@ -674,7 +675,7 @@ input#edit-task-title-input.task-title-input {
 }
 
 .submit-btn {
-  background-color: #219C90;
+  background-color: #219c90;
   color: white;
   border-radius: 30px;
   border: 0;
@@ -698,7 +699,7 @@ input#edit-task-title-input.task-title-input {
 }
 
 textarea {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 16px;
   color: black;
   height: 90px;
@@ -809,8 +810,7 @@ input:checked + #label-checkbox-theme:after {
 
   /* .side-bar.show-sidebar {
     display: none !important;
-  }
-
+  } */
 
   .container {
     max-width: 100%;
@@ -818,8 +818,7 @@ input:checked + #label-checkbox-theme:after {
 
   #header-board-name {
     font-size: 12px;
-  } */
-
+  }
   .side-bar.show-sidebar {
     position: fixed;
     height: auto;
@@ -844,7 +843,9 @@ input:checked + #label-checkbox-theme:after {
     background-color: transparent;
     border: none;
     margin-left: 10px;
+    margin-right: 10px;
     padding: 0;
+    width: 20px;
   }
 
   .logo-mobile {
@@ -864,7 +865,7 @@ input:checked + #label-checkbox-theme:after {
   }
 
   .boards-nav-links-div {
-    gap: 0;
+    gap: 10px;
     height: 100%;
   }
 
@@ -929,10 +930,10 @@ input:checked + #label-checkbox-theme:after {
   .side-bar {
     display: none;
     padding: 0;
-    height: 60%;
+    height: 35%;
     width: 30%;
     position: absolute;
-    top: 30%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.8rem;
@@ -966,6 +967,7 @@ input:checked + #label-checkbox-theme:after {
     padding-left: 18px;
     padding-right: 10px;
     border: none;
+    padding-top: 5px;
   }
 
   #edit-board-btn {
@@ -981,8 +983,8 @@ input:checked + #label-checkbox-theme:after {
   }
 
   #add-new-task-btn {
-    font-size: 0;
-    padding: 12px;
+    font-size: 12px;
+    padding: 5px;
   }
 
   #editBoardDiv {
@@ -997,19 +999,17 @@ input:checked + #label-checkbox-theme:after {
   }
 
   .header-board-name {
-  font-family: 'IBM Plex Sans', sans-serif;
-}
+    font-family: "IBM Plex Sans", sans-serif;
+  }
 
-.header-board-name {
-  font-family: 'IBM Plex Sans', sans-serif;
-}
-
+  .header-board-name {
+    font-family: "IBM Plex Sans", sans-serif;
+  }
 
   #deleteBoardBtn {
     font-size: 12px;
     font-weight: 500;
   }
-
 
   #header-board-name {
     font-size: 16px;
@@ -1046,9 +1046,6 @@ input:checked + #label-checkbox-theme:after {
   }
 }
 
-
-
-
 @media screen and (max-width: 480px) {
   .side-bar.show-sidebar {
     position: fixed;
@@ -1072,7 +1069,10 @@ input:checked + #label-checkbox-theme:after {
   }
 
   .dropdownBtn {
-    display: block;
+    display: inline-block;
+    position: absolute;
+    right: 22%;
+    bottom: 40%;
     background-color: transparent;
     border: none;
     margin-left: 10px;
@@ -1082,6 +1082,7 @@ input:checked + #label-checkbox-theme:after {
   .logo-mobile {
     display: block;
     margin-right: 10px;
+    margin-top: 10px;
   }
 
   body {
@@ -1096,7 +1097,7 @@ input:checked + #label-checkbox-theme:after {
   }
 
   .boards-nav-links-div {
-    gap: 0;
+    gap: 4px;
     height: 100%;
   }
 
@@ -1172,11 +1173,11 @@ input:checked + #label-checkbox-theme:after {
   .side-bar {
     display: none;
     padding: 0;
-    height: 60%;
+    height: 40%;
     width: 60%;
     /* border: 2px solid green; */
     position: absolute;
-    top: 50%;
+    top: 29%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.8rem;
@@ -1234,6 +1235,8 @@ input:checked + #label-checkbox-theme:after {
   #add-new-task-btn {
     font-size: 0;
     padding: 12px;
+    position: absolute;
+    right: 10px;
   }
 
   #editBoardDiv {
@@ -1265,6 +1268,9 @@ input:checked + #label-checkbox-theme:after {
 
   #header-board-name {
     font-size: 16px;
+    position: absolute;
+    right: 30%;
+    bottom: 22%;
   }
 
   .column-div {
@@ -1279,7 +1285,8 @@ input:checked + #label-checkbox-theme:after {
     /* box-sizing: border-box; */
   }
 
-  .modal-window {
+  .modal-window,
+  .board-modal-window {
     width: 95%;
   }
 
@@ -1340,8 +1347,6 @@ input:checked + #label-checkbox-theme:after {
     font-size: 1em;
   }
 }
-
-
 
 /* Laptops and Desktops */
 @media screen and (min-width: 1025px) {
