@@ -389,5 +389,5 @@ function init() {
       : "./assets/logo-dark.svg";
   }
 
-  fetchAndDisplayBoardsAndTasks(); // Initial display of boards and tasks
+  fetchAndDisplayBoardsAndTasks(); // Initial display of boards and tasks //
 }
