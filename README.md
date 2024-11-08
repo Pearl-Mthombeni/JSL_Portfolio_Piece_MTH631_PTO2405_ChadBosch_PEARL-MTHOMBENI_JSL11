@@ -3,6 +3,8 @@
 LOOM LINKS 
 https://www.loom.com/share/22d1ec04370e48288748e5f0545b6ed0
 https://www.loom.com/share/37848717015b470483ee10ffc2bc3ad5
+https://www.loom.com/share/e21c7d12fe9f41c19589539ca3e3672c
+
 
 
 Welcome to the Agile Board project, the final project for the JSL course! In this portfolio piece project, you will be stepping into the shoes of a juniour developer tasked with bringing a Kanban Task Management App to life. You're not starting from scratch, though. In this project, you are tasked with tackling the provided user stories to both identify and fix bugs in the code, as well as to develop your own functions to extend the application's capabilities. Key assignments include importing utility functions, initializing data, and diving into debugging tasks such as setting up data correctly in local storage, dynamically displaying boards and tasks, and enhancing user interactions.
